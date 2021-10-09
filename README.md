@@ -15,7 +15,8 @@ The exampe config use this module
 
 ```tf
 module "pkube" {
-  source = "elct9620/pkube"
+  source  = "elct9620/kuberentes/proxmox"
+  version = "0.1.0"
 
   cluster_name = "example"
   ipconfig = "ip=dhcp"
