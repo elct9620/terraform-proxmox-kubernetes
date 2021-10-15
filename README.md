@@ -30,11 +30,11 @@ module "pkube" {
   controllers = { "primary" = 1 }
   controller_hardware = {
     "primary" = {
-      "vmid" = 5000, # VMID start with 5000
-      "vcpus" = 1,
-      "memory" = 2048,
-      "disk_size" = "8G",
-      "storage" = "local-lvm",
+      vmid = 5000, # VMID start with 5000
+      cores = 1,
+      memory = 2048,
+      disk_size = "8G",
+      storage = "local-lvm",
     }
   }
 
@@ -42,7 +42,7 @@ module "pkube" {
   worker_hardware = {
     "pve-primary" = {
       vmid = 5100, # VMID start with 5100
-      vcpus = 1,
+      cores = 1,
       memory = 2048,
       disk_size = "32G",
       storage = "local-lvm",

@@ -171,7 +171,9 @@ resource "proxmox_vm_qemu" "controller" {
   clone = var.template
 
   vcpus = lookup(each.value.hardware, "vcpus", 1)
+  cores = lookup(each.value.hardware, "cores", 1)
   memory = lookup(each.value.hardware, "memory", 1024)
+  balloon = lookup(each.value.hardware, "balloon", 0)
 
   os_type = "cloud-init"
   ipconfig0 = var.ipconfig
@@ -215,7 +217,9 @@ resource "proxmox_vm_qemu" "worker" {
   sshkeys = var.ssh_keys
 
   vcpus = lookup(each.value.hardware, "vcpus", 1)
+  cores = lookup(each.value.hardware, "cores", 1)
   memory = lookup(each.value.hardware, "memory", 2048)
+  balloon = lookup(each.value.hardware, "balloon", 0)
 
   disk {
     type = "scsi"
