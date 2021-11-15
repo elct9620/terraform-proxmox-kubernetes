@@ -1,4 +1,4 @@
-Terraform ProxmoxVE Kuberentes
+Terraform ProxmoxVE Kubernetes
 ===
 
 This project is inspired by [vultr/condor](https://github.com/vultr/terraform-vultr-condor) but design for ProxmoxVE.
@@ -15,7 +15,7 @@ The exampe config use this module
 
 ```tf
 module "pkube" {
-  source  = "elct9620/kuberentes/proxmox"
+  source  = "elct9620/kubernetes/proxmox"
   version = "0.1.0"
 
   cluster_name = "example"
